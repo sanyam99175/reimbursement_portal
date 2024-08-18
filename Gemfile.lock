@@ -286,6 +286,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  execjs
   importmap-rails
   jbuilder
   jquery-rails

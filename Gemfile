@@ -27,6 +27,8 @@ gem 'bootstrap', '~> 4.5.2'
 gem 'jquery-rails'
 gem 'devise'
 
+gem 'execjs'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
