@@ -1,0 +1,33 @@
+<div class="card col-6 offset-3 mb-4" style="width: 50%; background-color: #8A9A5B;">
+  <div class="card-body">
+    <h3 class="text-white">Edit Reimbursement claim</h3>
+  </div>
+</div>
+<% if @reimbursement_claim.errors.any? %>
+  <% @reimbursement_claim.errors.full_messages.each do |message|%>
+     <div class="alert alert-danger"><%= message %></div>
+  <%end%>
+<%end%>
+<div class="col-6 offset-3">
+    <%= form_with(model: [@employee.company, @employee, @reimbursement_claim], local: true) do |form| %>
+       <div class="form-group">
+        <%= form.label :purpose %>
+        <%= form.text_field :purpose, class: 'form-control' %>
+        </div>
+    
+        <div class="form-group">
+        <%= form.label :amount %>
+        <%= form.number_field :amount, class: 'form-control' %>
+        </div>
+    
+        <div class="form-group">
+        <%= form.label :date_of_expenditure %>
+        <%= form.datetime_select :date_of_expenditure, class: 'form-control' %>
+        </div>
+    
+    
+        <div class="form-group">
+        <%= form.submit 'Update Reimbursement Claim', class: 'btn text-white', style: 'background-color: #8A9A5B;' %>
+        </div>
+    <% end %>
+</div>

@@ -1,0 +1,15 @@
+<div class="card col-6 offset-3 mb-4" style="width: 50%; background-color: #8A9A5B;">
+  <div class="card-body">
+    <h3 class="text-white">Companies</h3>
+  </div>
+</div>
+<%= link_to 'Add New Company', new_company_path, class: 'btn text-white mb-4 ml-4', style: 'background-color: #8A9A5B;' %>
+<% if @companies.length == 0 %>
+    <p class="text-center">No Companies Found</p>
+<% end %>
+<ul class=”list-group col-6 offset-3” style="width: 50%;">
+    <% @companies.each do |company| %>
+        <li class="list-group-item"><%= company.name %> <%= link_to 'View ->',  company_path(company), style: 'color: #8A9A5B;' %> </li>
+    <% end %>
+</ul>
+

@@ -1,0 +1,12 @@
+<div class="jumbotron text-center">
+    <h1 class="display-4"><%= @company.name %></h1>
+    <p class="lead">Total Employees: <%= @company.employee_count %> </p>
+    <p class="lead">Total Reimbursement Claims: <%= @company.total_reimbursement_claims %></p>
+    <hr class="my-4">
+    <p class="lead text-white">
+    <%= link_to "View Employees", company_employees_path(@company), class:'btn text-white', style:'background-color: #8A9A5B;'%>
+    <%= link_to "Edit Company", edit_company_path(@company), class:'btn text-white', style:'background-color: #8A9A5B;'%>
+    <%= link_to "Back to Companies", companies_path, class:'btn text-white', style:'background-color: #8A9A5B;'%>
+    </p>
+</div>
+

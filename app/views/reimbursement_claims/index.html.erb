@@ -1,0 +1,20 @@
+
+
+<div class="card col-6 offset-3 mb-4" style="width: 50%; background-color: #8A9A5B;">
+  <div class="card-body">
+    <h3 class="text-white">Reimbursement Claims</h3>
+  </div>
+</div>
+<%= link_to "Add New Reimbursement Claim", new_company_employee_reimbursement_claim_path(@employee.company, @employee), class:'btn mt-4 ml-4 mb-4 text-white', style:'background-color: #8A9A5B;'%>
+<% if @reimbursement_claims.length == 0 %>
+    <p class="text-center">No Claims Found</p>
+<% end %>
+<ul class=”list-group col-6 offset-3” style="width: 50%;">
+    <% @reimbursement_claims.each do |claim| %>
+        <li class="list-group-item"><%= claim.purpose %> - <%= claim.amount %> - <%= claim.date_of_expenditure %>
+           <%= link_to "Edit ->", edit_company_employee_reimbursement_claim_path(@employee.company, @employee, claim), class:'btn ml-4 text-white', style:'background-color: #8A9A5B;'%> </li>
+    <% end %>
+</ul>
+<%= link_to "Back to Employees ->", company_employee_path(@employee.company, @employee), class:'btn ml-4 mt-4 text-white', style:'background-color: #8A9A5B;'%>
+
+
